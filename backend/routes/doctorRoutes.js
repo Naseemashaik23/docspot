@@ -4,7 +4,7 @@ const Doctor = require("../models/Doctor")
 
 // Get all doctors
 router.get("/", async (req, res) => {
-    const doctors = await Doctor.find()
+    const doctors = await Doctor.find({ approved: true })
     res.json(doctors)
 })
 
